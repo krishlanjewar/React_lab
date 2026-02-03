@@ -1,0 +1,90 @@
+.counter-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--slate-200);
+}
+
+.count-display {
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 1.5rem 0;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    color: var(--slate-800);
+    transition: color 0.2s ease;
+}
+
+.count-display.positive {
+    color: var(--indigo-600);
+}
+
+.count-display.negative {
+    color: #ef4444;
+    /* Red-500 */
+}
+
+.counter-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-control {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-inc {
+    background-color: var(--indigo-600);
+    color: white;
+}
+
+.btn-inc:hover {
+    background-color: var(--indigo-700);
+    transform: translateY(-2px);
+}
+
+.btn-inc:active {
+    transform: translateY(0);
+}
+
+.btn-dec {
+    background-color: var(--slate-200);
+    color: var(--slate-800);
+}
+
+.btn-dec:hover {
+    background-color: var(--slate-300);
+    transform: translateY(-2px);
+}
+
+.btn-dec:active {
+    transform: translateY(0);
+}
+
+.btn-reset {
+    background-color: transparent;
+    color: var(--slate-500);
+    border: 1px solid var(--slate-300);
+}
+
+.btn-reset:hover {
+    background-color: var(--slate-50);
+    color: #ef4444;
+    border-color: #ef4444;
+}

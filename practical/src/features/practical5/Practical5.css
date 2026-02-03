@@ -1,0 +1,36 @@
+.p5-console {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Monaco', monospace;
+    padding: 1rem;
+    border-radius: 8px;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--slate-700);
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.log-entry {
+    border-bottom: 1px solid #333;
+    padding: 4px 0;
+    font-size: 0.85rem;
+}
+
+.log-time {
+    color: #569cd6;
+    margin-right: 0.5rem;
+}
+
+.log-msg {
+    color: #ce9178;
+}
+
+.p5-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}

@@ -1,0 +1,46 @@
+.hello-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.hello-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--indigo-600), var(--indigo-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hello-subtitle {
+    font-size: 1.25rem;
+    color: var(--slate-500);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.timestamp {
+    font-family: monospace;
+    background-color: var(--slate-100);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--slate-600);
+    font-size: 0.875rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { RootLayout } from './layouts/RootLayout';
+import { HomePage } from './features/home/HomePage';
+import { HelloReact } from './features/practical1/HelloReact';
+import { Practical2 } from './features/practical2/Practical2';
+import { Practical3 } from './features/practical3/Practical3';
+import { Practical4 } from './features/practical4/Practical4';
 
+/**
+ * Main Application Component
+ * Handles routing and global layout wrapping.
+ */
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <RootLayout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/practical-1" element={<HelloReact />} />
+          <Route path="/practical-2" element={<Practical2 />} />
+          <Route path="/practical-3" element={<Practical3 />} />
+          <Route path="/practical-4" element={<Practical4 />} />
+          {/* Add more routes here as practicals are created */}
+          <Route path="*" element={
+            <div style={{ textAlign: 'center', padding: '4rem' }}>
+              <h2>404 - Page Not Found</h2>
+              <p>The practical you are looking for hasn't been built yet.</p>
+            </div>
+          } />
+        </Routes>
+      </RootLayout>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
