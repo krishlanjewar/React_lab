@@ -6,6 +6,7 @@ import { HelloReact } from './features/practical1/HelloReact';
 import { Practical2 } from './features/practical2/Practical2';
 import { Practical3 } from './features/practical3/Practical3';
 import { Practical4 } from './features/practical4/Practical4';
+import { Practical5 } from './features/practical5/Practical5';
 
 /**
  * Main Application Component
@@ -21,6 +22,7 @@ function App() {
           <Route path="/practical-2" element={<Practical2 />} />
           <Route path="/practical-3" element={<Practical3 />} />
           <Route path="/practical-4" element={<Practical4 />} />
+          <Route path="/practical-5" element={<Practical5 />} />
           {/* Add more routes here as practicals are created */}
           <Route path="*" element={
             <div style={{ textAlign: 'center', padding: '4rem' }}>

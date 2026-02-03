@@ -6,7 +6,7 @@ const PRACTICALS = [
     { id: 2, title: 'Practical 2: Components', description: 'Building a UI with reusable Header and Footer components.', icon: '02' },
     { id: 3, title: 'Practical 3: Props', description: 'Passing data to reusable StudentCard component via props.', icon: '03' },
     { id: 4, title: 'Practical 4: State (Counter)', description: 'Interactive counter app using pure React useState hook.', icon: '04' },
-    { id: 5, title: 'Practical 5: Routing', description: 'Building multi-page apps with React Router.', icon: '05' },
+    { id: 5, title: 'Practical 5: Lifecycle (Effects)', description: 'Demonstrating Mount vs Update phases with useEffect.', icon: '05' },
     { id: 6, title: 'Practical 6: Context API', description: 'Managing global state without prop drilling.', icon: '06' },
 ];
 
