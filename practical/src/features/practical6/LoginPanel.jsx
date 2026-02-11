@@ -25,7 +25,7 @@ export const LoginPanel = () => {
                     </div>
                 ) : (
                     <div className="login-content">
-                        <p className="login-subtitle">Access exclusive content by logging in below.</p>
+                        <p className="login-subtitle">Login below.</p>
                         <div className="input-group">
                             <input type="text" placeholder="Username" className="login-input" />
                             <input type="password" placeholder="Password" className="login-input" />
