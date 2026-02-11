@@ -1,0 +1,157 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--indigo-50) 0%, #ffffff 100%);
+    border-radius: 1rem;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+}
+
+.login-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--slate-800);
+    margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+    color: var(--slate-500);
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--slate-200);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--slate-700);
+    transition: all 0.2s ease;
+    background: var(--slate-50);
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: var(--primary-brand);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: white;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary-brand);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--indigo-700);
+    box-shadow: 0 6px 8px -1px rgba(79, 70, 229, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 0.75rem;
+    background: #ef4444;
+    /* Red-500 equivalent */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);
+}
+
+.btn-secondary:hover {
+    background: #dc2626;
+    /* Red-600 equivalent */
+    box-shadow: 0 6px 8px -1px rgba(239, 68, 68, 0.3);
+    transform: translateY(-1px);
+}
+
+.success-message {
+    background: #ecfdf5;
+    /* Green-50 */
+    color: #047857;
+    /* Green-700 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #d1fae5;
+    font-weight: 500;
+}
+
+/* Animation for the card content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.login-content>* {
+    animation: fadeIn 0.4s ease-out forwards;
+    opacity: 0;
+    /* Start invisible for animation */
+}
+
+/* Stagger animations */
+.login-content>*:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.login-content>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.login-content>*:nth-child(3) {
+    animation-delay: 0.3s;
+}

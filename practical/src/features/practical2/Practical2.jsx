@@ -13,23 +13,11 @@ export const Practical2 = () => {
 
             <div className="p2-container">
                 {/* Pass dynamic data to Header */}
-                <Header studentName="Student #101" />
+                <Header/>
 
                 <main className="p2-content">
                     <h3>Welcome to the Dashboard</h3>
-                    <p>
-                        This section represents the main content area of the application.
-                        Notice how the Header and Footer are distinct components surrounding this content.
-                    </p>
-                    <div style={{ marginTop: '2rem', padding: '1rem', background: 'white', borderRadius: '8px', border: '1px dashed var(--slate-300)' }}>
-                        <code>
-                            &lt;App&gt;<br />
-                            &nbsp;&nbsp;&lt;Header studentName="..." /&gt;<br />
-                            &nbsp;&nbsp;&lt;MainContent /&gt;<br />
-                            &nbsp;&nbsp;&lt;Footer /&gt;<br />
-                            &lt;/App&gt;
-                        </code>
-                    </div>
+                    
                 </main>
 
                 {/* Footer computes date internally */}

@@ -25,10 +25,6 @@ export const LifecycleDemo = ({ addLog }) => {
 
     // 2. Update Effect: Runs whenever 'value' changes
     useEffect(() => {
-        // Skip initial mount log to be clearer, or log it too. 
-        // Usually useEffect runs on mount + update.
-        // To strictly log only *updates* after mount, we'd use a ref, but 
-        // for this practical, standard behavior is expected.
 
         if (value !== 0) { // Just filtering purely for visual noise reduction on init
             console.log('Value Updated:', value);

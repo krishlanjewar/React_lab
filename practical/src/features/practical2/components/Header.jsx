@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const Header = ({ studentName }) => {
+export const Header = () => {
     return (
         <header className="p2-header">
-            <h2>Student Assignment</h2>
+            <h2>Practical TWO header</h2>
             <div className="p2-user-badge">
-                User: {studentName}
+                User: Krish Lanjewar
             </div>
         </header>
     );

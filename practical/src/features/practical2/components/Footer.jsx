@@ -10,8 +10,7 @@ export const Footer = () => {
 
     return (
         <footer className="p2-footer">
-            <p>Submission Date: {today}</p>
-            <p>&copy; 2024 University Lab Utils</p>
+            <p>Todays Date: {today}</p>
         </footer>
     );
 };

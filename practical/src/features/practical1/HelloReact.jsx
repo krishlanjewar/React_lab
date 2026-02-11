@@ -20,15 +20,12 @@ export const HelloReact = () => {
 
     return (
         <div className="hello-container">
-            <h1 className="hello-title">Hello, React!</h1>
+            <h1 className="hello-title">Hello, React! </h1>
             <p className="hello-subtitle">
-                Welcome to your first practical component. This page is built using a functional component
-                and demonstrates React's ability to handle dynamic updates efficiently.
+                Welcome to first practical . This page is built on 7/1/26 .
+                <br />
+                krish lanjewar -24003092 
             </p>
-
-            <div className="timestamp">
-                Current Time: <strong>{time}</strong>
-            </div>
         </div>
     );
 };
