@@ -1,0 +1,306 @@
+/* Main Container */
+.registration-wrapper {
+    min-height: 100vh;
+    background-color: #f1f5f9;
+    /* slate-100 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.registration-card {
+    width: 100%;
+    max-width: 64rem;
+    /* max-w-5xl */
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .registration-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Form Section */
+.form-section {
+    padding: 2rem;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .form-section {
+        padding: 3rem;
+    }
+}
+
+/* Progress Bar */
+.progress-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #f1f5f9;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #4f46e5;
+    /* indigo-600 */
+    transition: width 0.5s ease-out;
+}
+
+/* Typography */
+.form-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1e293b;
+    /* slate-800 */
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    color: #64748b;
+    /* slate-500 */
+    margin-bottom: 2rem;
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #334155;
+    /* slate-700 */
+    margin-bottom: 0.25rem;
+    text-transform: capitalize;
+}
+
+.form-input {
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    /* slate-300 */
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    border-color: #6366f1;
+    /* indigo-500 */
+    box-shadow: 0 0 0 2px #e0e7ff;
+    /* indigo-100 */
+}
+
+/* Validation States */
+.form-input.valid {
+    border-color: #22c55e;
+    /* green-500 */
+    background-color: #f0fdf4;
+    /* green-50 */
+    box-shadow: 0 0 0 2px #dcfce7;
+}
+
+.form-input.invalid {
+    border-color: #ef4444;
+    /* red-500 */
+    background-color: #fef2f2;
+    /* red-50 */
+    box-shadow: 0 0 0 2px #phyfee2;
+}
+
+.success-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 2.25rem;
+    color: #22c55e;
+    animation: bounce 1s infinite;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn.active {
+    background-color: #4f46e5;
+}
+
+.submit-btn.active:hover {
+    background-color: #4338ca;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn.disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+/* Preview Section (Right Side) */
+.preview-section {
+    background: linear-gradient(135deg, #4f46e5 0%, #7e22ce 100%);
+    padding: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .preview-section {
+        padding: 3rem;
+    }
+}
+
+/* Background Decorations */
+.bg-decoration {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-decoration-1 {
+    top: -4rem;
+    right: -4rem;
+}
+
+.bg-decoration-2 {
+    bottom: -4rem;
+    left: -4rem;
+}
+
+/* Glass Card */
+.glass-card {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.5s;
+}
+
+.glass-card:hover {
+    transform: scale(1.05);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.icon-box {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-label {
+    font-size: 0.75rem;
+    color: #e0e7ff;
+}
+
+.preview-value {
+    font-weight: 600;
+    min-height: 1.5rem;
+}
+
+.course-badge {
+    background-color: white;
+    color: #4f46e5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.community-text {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #e0e7ff;
+}
+
+/* Animations */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
