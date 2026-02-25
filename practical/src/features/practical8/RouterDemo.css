@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+.p8-wrapper {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #1e0b36 0%, #150821 100%);
+    min-height: 80vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    /* Ensure it looks nice even if container is smaller */
+    box-sizing: border-box;
+}
+
+/* Add some animated glowing orbs in the background */
+.p8-wrapper::before,
+.p8-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    animation: floatOrb 10s infinite alternate;
+}
+
+.p8-wrapper::before {
+    background: rgba(147, 51, 234, 0.4);
+    /* Purple */
+    top: -100px;
+    left: -100px;
+}
+
+.p8-wrapper::after {
+    background: rgba(59, 130, 246, 0.4);
+    /* Blue */
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 50px) scale(1.2);
+    }
+}
+
+.p8-container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.p8-nav {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+}
+
+.p8-nav-link {
+    color: #a3a3a3;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.p8-nav-link:hover {
+    color: #ffffff;
+}
+
+.p8-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #9333ea, #3b82f6);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.p8-nav-link:hover::after {
+    width: 100%;
+}
+
+.p8-content-area {
+    padding: 3rem 2rem;
+    min-height: 400px;
+    color: #ffffff;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.p8-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    background: linear-gradient(to right, #e879f9, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.p8-text {
+    font-size: 1.125rem;
+    color: #d4d4d8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.p8-badge {
+    background: rgba(147, 51, 234, 0.2);
+    color: #e879f9;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    border: 1px solid rgba(147, 51, 234, 0.4);
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.p8-card {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.p8-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(147, 51, 234, 0.3);
+}
+
+.p8-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.p8-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.p8-input:focus {
+    outline: none;
+    border-color: #9333ea;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.p8-button {
+    background: linear-gradient(90deg, #9333ea, #3b82f6);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    font-family: inherit;
+}
+
+.p8-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.p8-button:active {
+    transform: translateY(0);
+}

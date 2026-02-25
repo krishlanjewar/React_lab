@@ -159,6 +159,8 @@ export const RegistrationForm = () => {
                                 <option value="React">React Development</option>
                                 <option value="Node">Node.js Backend</option>
                                 <option value="FullStack">Full Stack Development</option>
+                                <option value="Python">Python Development</option>
+                                <option value="Java">Java Development</option>
                             </select>
                             {touched.course && errors.course && (
                                 <p className="error-message">
