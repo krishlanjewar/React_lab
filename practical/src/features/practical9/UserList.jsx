@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import './UserList.css';
 
 export const UserList = () => {
-    const [users, setUsers] = useState([]);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        // Fetch data from Open Food Facts API
+        fetch('https://world.openfoodfacts.org/api/v2/search?page_size=24')
             .then(response => response.json())
-            .then(data => {
-                setUsers(data);
+            .then(result => {
+                // Open Food Facts API returns a list of products inside the "products" property
+                if (result.products) {
+                    setData(result.products);
+                } else if (Array.isArray(result)) {
+                    setData(result);
+                } else {
+                    setData([]);
+                }
                 setLoading(false);
             })
             .catch(error => {
@@ -17,26 +26,67 @@ export const UserList = () => {
             });
     }, []);
 
+    // Show loading screen when data is loading
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-40">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+            <div className="loading-container">
+                <div className="spinner"></div>
+                <p className="loading-text">Loading Products...</p>
             </div>
         );
     }
 
+    // Show the response in a list
     return (
-        <div className="max-w-4xl mx-auto mt-10 p-6">
-            <h2 className="text-2xl font-bold mb-6 text-slate-800">API Data Fetching (Users)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {users.map(user => (
-                    <div key={user.id} className="p-4 border border-slate-200 rounded-lg shadow-sm hover:shadow-md transition">
-                        <h3 className="font-bold text-lg text-slate-800">{user.name}</h3>
-                        <p className="text-sm text-indigo-600 mb-2">@{user.username}</p>
-                        <p className="text-sm text-slate-500">{user.email}</p>
-                        <p className="text-sm text-slate-500">{user.website}</p>
+        <div className="user-list-container">
+            <h2 className="page-title">
+                Explore <span className="title-highlight">Food Products</span>
+            </h2>
+
+            <div className="models-grid">
+                {data.map((item, index) => (
+                    <div key={item._id || index} className="model-card">
+                        {item.image_url && (
+                            <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                                <img src={item.image_url} alt={item.product_name} style={{ maxHeight: '150px', maxWidth: '100%', borderRadius: '8px' }} />
+                            </div>
+                        )}
+                        <h3 className="model-name" title={item.product_name || "Unknown Product"}>
+                            {item.product_name || "Unknown Product"}
+                        </h3>
+
+                        <div>
+                            <span className="model-id-badge">
+                                {item.brands || "Unknown Brand"}
+                            </span>
+                        </div>
+
+                        <p className="model-description" title={item.categories}>
+                            {item.categories ? item.categories.split(',').slice(0, 3).join(', ') : "No category available."}
+                        </p>
+
+                        <div className="model-footer">
+                            <span>Qty: <span className="version-tag">{item.quantity || 'N/A'}</span></span>
+
+                            {item.nutrition_grades && (
+                                <div className="feature-tag" style={{ textTransform: 'uppercase' }}>
+                                    Score: {item.nutrition_grades}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 ))}
+
+                {data.length === 0 && (
+                    <div className="empty-state">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <p>No products accessible or an error occurred.</p>
+                    </div>
+                )}
             </div>
         </div>
     );
